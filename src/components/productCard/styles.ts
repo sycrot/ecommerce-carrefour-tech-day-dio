@@ -9,25 +9,38 @@ export const CardProduct = styled.div`
     box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
     border-radius: 4px;
     cursor: pointer;
+
+    @media screen and (min-width: 980px) {
+        width: 250px;
+        height: 360px;
+    }
 `
 
 export const ProductImage = styled.div`
     width: 100%;
-    height: 170px;
+    height: 150px;
     overflow: hidden;
 
     img {
         width: 100%;
+    }
+
+    @media screen and (min-width: 980px) {
+        height: 220px;
     }
 `
 
 export const ProductTitle = styled.div`
     font-weight: bold;
     width: 100%;
-    height: 20px;
+    height: 42px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    @media screen and (min-width: 980px) {
+        white-space: normal;
+    }
 `
 
 export const ProductPrice = styled.div`

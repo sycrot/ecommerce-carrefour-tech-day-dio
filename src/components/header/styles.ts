@@ -65,6 +65,7 @@ export const Nav = styled.div`
     background: #02458c;
     position: absolute;
     top: 150px;
+    display: ${props => props.display || 'none'};
 
     a {
         text-decoration: none;

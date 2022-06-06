@@ -21,6 +21,7 @@ export const Image = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 
     img { 
         width: 600px; 
@@ -48,7 +49,7 @@ export const ContentBottom = styled.div`
 `
 
 export const Name = styled.div`
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 1em;
 `

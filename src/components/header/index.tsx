@@ -5,7 +5,7 @@ import Logo from '../../logo.svg'
 import * as I from '../../common/icons'
 
 export const Header = () => {
-    const [handleNavState, setHandleNavState] = useState(true)
+    const [handleNavState, setHandleNavState] = useState(false)
 
     const setHandleNav = () => {
         if (handleNavState === false) {
@@ -17,33 +17,9 @@ export const Header = () => {
 
     const handleNav = () => {
         if (handleNavState === true) {
-            return (
-                <C.Nav>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                    <Link to="/categories">
-                        <C.NavItem>Categoria</C.NavItem>
-                    </Link>
-                </C.Nav>
-            )
+            return 'block'
         } else {
-            return
+            return 'none'
         }
     }
 
@@ -57,7 +33,30 @@ export const Header = () => {
             <C.Actions>
                 <C.ActionItem>{I.Bag}<i>1</i></C.ActionItem>
             </C.Actions>
-            {handleNav()}
+            
+            <C.Nav display={handleNav()}>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+                <Link to="/categories">
+                    <C.NavItem>Categoria</C.NavItem>
+                </Link>
+            </C.Nav>
         </C.Header>
     )
 }
