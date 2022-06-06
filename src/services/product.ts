@@ -80,9 +80,20 @@ export const getCaterogy = async (category: string) => {
         }
     }).catch(err => console.log('Error', err))
 
-    let listResult = list.filter(function(value) {
-        return value.categories.includes(category) > -1
-    })
+    let listResult:any[] = []
+
+    for(let i in list) {
+        if (list[i].categories.includes(`/${category}/`) === true) {
+            listResult.push({
+                id: list[i].id,
+                name: list[i].name,
+                description: list[i].description,
+                image: list[i].image,
+                categories: list[i].categories,
+                sellers: list[i].sellers
+            })
+        }
+    }
 
     return listResult
 }

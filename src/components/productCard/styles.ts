@@ -5,14 +5,19 @@ export const CardProduct = styled.div`
     height: 280px;
     padding: 0.5em 1em;
     overflow: hidden;
-    margin: 0.4em;
-    box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
+    margin: 0.3em;
     border-radius: 4px;
+    border: 1px solid #eaeaea;
     cursor: pointer;
 
     @media screen and (min-width: 980px) {
         width: 250px;
         height: 360px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            box-shadow: 3px 3px 10px #ededed;
+        }
     }
 `
 
