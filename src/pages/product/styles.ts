@@ -45,6 +45,7 @@ export const ContentBottom = styled.div`
     @media screen and (min-width: 980px) {
         grid-column: 1/3;
         grid-row: 2;
+        border-top: 2px solid #cecece;
     }
 `
 

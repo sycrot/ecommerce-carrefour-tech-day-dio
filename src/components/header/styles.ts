@@ -26,6 +26,7 @@ export const Logo = styled.div`
 
     justify-self: center;
     align-self: end;
+    
 
     img {
         width: 60px;
@@ -44,6 +45,15 @@ export const Logo = styled.div`
         justify-self: end;
         align-self: center;
         margin-right: 1.5em;
+
+        a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+
+            justify-self: end;
+            align-self: center;
+        }
 
         img {
             width: 80px;
@@ -186,7 +196,7 @@ export const Search = styled.div`
         background: none;
         color: #fff;
         border-radius: 6px;
-        padding: 0 1.2em;
+        padding: 0 3em 0 1.2em;
         
         &:focus {
             background: #024fa1;
@@ -201,8 +211,9 @@ export const Search = styled.div`
         width: 24px;
         color: #fff;
         position: absolute;
-        right: 0.5em;
-        top: 0.2em;
+        right: 0.8em;
+        top: 0.3em;
+        cursor: pointer;
     }
 
     &:focus {
@@ -212,5 +223,93 @@ export const Search = styled.div`
     @media screen and (min-width: 980px) {
         grid-column: 2;
         grid-row: 1;
+    }
+`
+
+export const AllItems = styled.div`
+    width: 100%;
+    margin: 1em 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    position: relative;
+
+    @media screen and (min-width: 980px) {
+        width: 220px;
+        margin: 0;
+    }
+`
+
+export const ListAll = styled.ul`
+    width: 100%;
+    list-style-type: none;
+    background: #024fa2;
+    display: ${props => props.display || 'none'};
+
+    li {
+        width: 100%;
+        height: 50px;
+    }
+
+    li a {
+        width: 100%;
+        height: 50px;
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 980px) {
+        width: 300px;
+        position: absolute;
+        top: 55px;
+        background: #fff;
+        border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+
+        li a {
+            color: #024fa2;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background: #024fa2;
+                color: #fff;
+            }
+        }
+    }
+`
+
+export const ListTitle = styled.div`
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    i {
+        display: block;
+        width: 20px;
+        margin-left: 0.4em;
+    }
+
+    @media screen and (min-width: 980px) {
+        color: #02458c;
+        height: 53px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 5px 5px 0 0;
+        transition: all .2s ease-in-out;
+        background: #fff;
+
+        &:hover {
+            background: #02458c;
+            color: #fff;
+        }
     }
 `

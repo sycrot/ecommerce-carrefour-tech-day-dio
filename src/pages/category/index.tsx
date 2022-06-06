@@ -5,13 +5,13 @@ import * as productService from '../../services/product'
 import * as C from './styles'
 import * as I from '../../common/icons'
 
-export const Search = () => {
+export const Category = () => {
     const {value} = useParams()
     const [products, setProducts] = useState<Array<any>>([])
 
     useEffect(() => {
         const getProducts = async () => {
-            const res = await productService.search(value).then(e => e)
+            const res = await productService.getCaterogy(value).then(e => e)
             setProducts(res)
         }
         getProducts()

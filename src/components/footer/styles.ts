@@ -58,6 +58,7 @@ export const ListItemBox = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 50px;
     border: 2px solid #fff;
     border-radius: 5px;
     margin-top: 0.5em;
@@ -70,7 +71,6 @@ export const ListItemBox = styled.div`
 
     @media screen and (min-width: 980px) {
         width: 300px;
-        height: 50px;
     }
 `
 export const ListItem = styled.div`
