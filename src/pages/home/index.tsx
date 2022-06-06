@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
+import { ProductCard } from "../../components/productCard"
 import * as productService from '../../services/product'
+import * as C from './styles'
 
 export const Home = () => {
 
@@ -7,21 +9,17 @@ export const Home = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            console.log(await productService.getAll())
+            const res = await productService.getAll()
+            setProducts(res)
         }
         getProducts()
     }, [])
 
     return (
-        <div>
+        <C.Container>
             {products.map((product, index) => (
-                <div>
-                    <div>{product.items.images}</div>
-                    <div>{product.name}</div>
-                    <div>{product.categories}</div>
-                    <div>{product.description}</div>
-                </div>
+                <ProductCard id={product.id}  key={product.id} image={product.image} name={product.name} sellers={product.sellers}/>
             ))}
-        </div>
+        </C.Container>
     )
 }

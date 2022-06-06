@@ -5,9 +5,9 @@ export const Container = styled.div`
     background: #02458c;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     padding: 4em;
 `
@@ -17,8 +17,14 @@ export const ListContainer = styled.div`
     max-width: 1180px;
     justify-content: space-between;
     margin-bottom: 2em;
+    flex-direction: column;
+
+    @media screen and (min-width: 980px){
+        flex-direction: row;
+    }
 `
 export const List = styled.div`
+    margin-top: 1em;
     ul {
         list-style-type: none;
     }
@@ -41,14 +47,17 @@ export const List = styled.div`
         text-decoration: none;
         color: #fff;
     }
+
+    @media screen and (min-width: 980px) {
+        margin-top: 0;
+    }
 `
 
 export const ListItemBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 50px;
+    width: 100%;
     border: 2px solid #fff;
     border-radius: 5px;
     margin-top: 0.5em;
@@ -58,16 +67,26 @@ export const ListItemBox = styled.div`
         height: 20px;
         margin-right: 0.5em;
     }
+
+    @media screen and (min-width: 980px) {
+        width: 300px;
+        height: 50px;
+    }
 `
 export const ListItem = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 1em;
 
     span {
         font-size: 0.9em;
         font-weight: bold;
         color:#fff;
         margin-bottom: 0.5em;
+    }
+
+    @media screen and (min-width: 980px){
+        margin-top: 0;
     }
 `
 
