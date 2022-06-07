@@ -185,36 +185,45 @@ export const Search = styled.div`
     width: 100%;
 
     background: #02458c;
+    background: #fff;
     border-radius: 6px;
     position: relative;
+    overflow: hidden;
 
     input {
         width: 100%;
         height: 36px;
-        border: none;
+        border: 2px solid #02458c;
         outline: none;
         font-size: 1em;
         background: none;
-        color: #fff;
+        color: #02458c;
         border-radius: 6px;
         padding: 0 3em 0 1.2em;
-        
-        &:focus {
-            background: #024fa1;
-        }
 
         &::placeholder {
             color: #cecece;
         }
     }
 
-    i {
-        width: 24px;
-        color: #fff;
+    a {
+        width: 42px;
+        height: 36px;
         position: absolute;
-        right: 0.8em;
-        top: 0.3em;
+        right: 0;
+        top: 0;
         cursor: pointer;
+        background: #02458c;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    i {
+        display: block;
+        width: 26px;
+        color: #fff;
     }
 
     &:focus {

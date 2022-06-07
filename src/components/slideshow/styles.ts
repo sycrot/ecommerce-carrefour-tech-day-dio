@@ -59,7 +59,7 @@ export const SlideContent = styled.div`
     }
 
     @media screen and (min-width: 980px){
-        height: 270px;
+        height: 263px;
 
         .slide-image {
 

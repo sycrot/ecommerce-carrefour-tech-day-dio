@@ -7,21 +7,14 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     
-    padding: 1em 0;
-`
-
-export const Products = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    padding: 0 1em;
 `
 
 export const ListItems = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 `
 
 export const Promotion = styled.div`
@@ -34,6 +27,7 @@ export const Promotion = styled.div`
     border-radius: 6px;
     overflow: hidden;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    cursor: pointer;
 
     margin: 0 0.3em 0.3em 0.3em;
 
@@ -63,4 +57,14 @@ export const PromotionTexts = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`
+
+export const TitleContent = styled.h3`
+    width: 100%;
+    border-bottom: 2px solid #cecece;
+    padding: 0.4em 0;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #02458C;
+    margin: 1em;
 `

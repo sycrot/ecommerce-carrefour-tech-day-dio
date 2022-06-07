@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardProduct = styled.div`
-    width: 180px;
+    width: 170px;
     height: 280px;
     padding: 0.5em 1em;
     overflow: hidden;
@@ -9,9 +9,10 @@ export const CardProduct = styled.div`
     border-radius: 4px;
     border: 1px solid #eaeaea;
     cursor: pointer;
+    scroll-snap-align: start;
 
     @media screen and (min-width: 980px) {
-        width: 250px;
+        width: 279px;
         height: 360px;
         transition: all .2s ease-in-out;
 

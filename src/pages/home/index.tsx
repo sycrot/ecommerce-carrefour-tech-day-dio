@@ -1,20 +1,35 @@
 import { useEffect, useState } from "react"
-import { ProductCard } from "../../components/productCard"
 import { SlideShow } from "../../components/slideshow"
 import * as productService from '../../services/product'
 import * as C from './styles'
+import * as I from '../../common/icons'
+import { OfferSection } from "../../components/offerSection"
+import { OffersCategories } from "../../components/offersCategories"
 
 export const Home = () => {
 
     const [products, setProducts] = useState<Array<any>>([])
+    const [productsOffer, setProductsOffer] = useState<Array<any>>([])
 
     useEffect(() => {
         const getProducts = async () => {
             const res = await productService.getAll()
+            
             setProducts(res)
         }
         getProducts()
     }, [])
+
+    useEffect(() => {
+        const getProductsOffer = async () => {
+            const res = await productService.getProductClusters(5622)
+
+            console.log(res)
+        }
+        getProductsOffer()
+    }, [])
+
+
 
     return (
         <C.Container>
@@ -43,12 +58,25 @@ export const Home = () => {
                     </C.PromotionTexts>
                 </C.Promotion>
             </C.ListItems>
-            <C.Products>
-                {products.map((product, index) => (
-                    <ProductCard id={product.id}  key={product.id} image={product.image} name={product.name} sellers={product.sellers}/>
-                ))}
-            </C.Products>
-            
+
+            <OfferSection title="Ofertas da semana" products={products}/>
+
+            <C.TitleContent>Os melhores produtos!</C.TitleContent>
+            <C.ListItems>
+                <OffersCategories link="Destilados" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/db53c60a-d929-4a0f-afe2-fcaf168cf1d5___c02858a2da0edca05be4fbb4b5e9bb50.png" name="Destilados"/>
+
+                <OffersCategories link="TVs" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/8e82cb9e-83b4-47ba-ad9e-7f710e54bf01___30f4c0efb0fdb946c2452b930c0c4be1.png" name="TVs"/>
+
+                <OffersCategories link="Apple" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/bf112a75-980d-4c56-a476-714eb2f4fdbc___3dee58d9ddf18692bdf3321e6908b837.png" name="Apple"/>
+
+                <OffersCategories link="Cozinha" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/76044250-a8c8-47bf-be81-2f3a1867a709___7ca7a027d462bece1a0b76f16cb9ba80.png" name="Cozinha"/>
+
+                <OffersCategories link="Maquinas+de+lavar" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/aa0a4741-44d7-41a6-8c64-c619e6968e58___561a3e2966edbb5bd5802b8772b54ea3.png" name="Máquinas de lavar"/>
+
+                <OffersCategories link="Informatica" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/be056131-bf1f-48b0-8350-88b39f714f38___017c49383bdc5817092551f831b063e9.png" name="Informática"/>
+
+                <OffersCategories link="Eletroportateis" image="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/9b1aa820-bb41-4002-bd46-f2a7c1573c40___db9ae3514064ff4fd82ebc47f9a6d67c.png" name="Eletroportáteis"/>
+            </C.ListItems>
         </C.Container>
     )
 }
