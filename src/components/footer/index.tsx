@@ -4,7 +4,7 @@ import * as I from '../../common/icons'
 export const Footer = () => {
     return (
         <C.Container>
-            <C.ListContainer>
+            <C.ListContainer style={{borderBottom: '2px solid #0758A4'}}>
                 <C.List>
                     <ul>
                         <li className="list-title">Atendimento</li>
@@ -49,7 +49,6 @@ export const Footer = () => {
                     </ul>
                 </C.List>
             </C.ListContainer>
-
             <C.ListContainer>
                 <C.ListItem>
                     <span>Formas de pagamento</span>

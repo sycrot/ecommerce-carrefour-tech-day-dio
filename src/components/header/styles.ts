@@ -76,6 +76,7 @@ export const Nav = styled.div`
     position: absolute;
     top: 150px;
     display: ${props => props.display || 'none'};
+    z-index: 10;
 
     a {
         text-decoration: none;
@@ -271,6 +272,7 @@ export const ListAll = styled.ul`
         border-radius: 0 0 5px 5px;
         overflow: hidden;
         box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+        z-index: 10;
 
         li a {
             color: #024fa2;

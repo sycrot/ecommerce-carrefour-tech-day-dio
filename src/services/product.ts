@@ -78,12 +78,15 @@ export const getCaterogy = async (category: string) => {
                 sellers: data[i].items[0].sellers[0].commertialOffer.Price
             })
         }
+
+        
     }).catch(err => console.log('Error', err))
 
     let listResult:any[] = []
 
     for(let i in list) {
-        if (list[i].categories.includes(`/${category}/`) === true) {
+        let categoryUp = category.replace('+', ' ')
+        if (list[i].categories.includes(`/${categoryUp}/`) === true) {
             listResult.push({
                 id: list[i].id,
                 name: list[i].name,

@@ -64,13 +64,13 @@ export const Header = () => {
                     <C.ListAll display={handleNav(handleNavListState)}>
                         <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Mercearia">Mercearia</Link></li>
 
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Hortifruti">Hortifruti</Link></li>
+
                         <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Açucar">Açucar e Adoçante</Link></li>
 
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Massas&Molhos">Massas e Molhos</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Massas+Molhos">Massas e Molhos</Link></li>
 
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Doces&Confeitaria">Doces e Confeitaria</Link></li>
-
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Hortifruti">Hortifruti</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Doces+Confeitaria">Doces e Confeitaria</Link></li>
                         
                         <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Notebooks">Notebooks</Link></li>
                         <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Eletrodomesticos">Eletrodomésticos</Link></li>
