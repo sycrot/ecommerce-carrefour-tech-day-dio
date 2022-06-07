@@ -1,9 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Header } from './components/header'
-import { Category } from './pages/category'
 import { Home } from './pages/home'
 import { Product } from './pages/product'
-import { Search } from './pages/search'
+import { Products } from './pages/products'
 
 export const Router = () => {
     return (
@@ -11,9 +10,8 @@ export const Router = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/search/:value" element={<Search />} />
+                <Route path="/products/:type/:value" element={<Products />} />
                 <Route path="/product/:id" element={<Product />} />
-                <Route path="/categories/:category" element={<Category />} />
             </Routes>
         </BrowserRouter>
     )

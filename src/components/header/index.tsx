@@ -30,7 +30,7 @@ export const Header = () => {
         setTextSearch(event.value)
         event.addEventListener('keydown', e => {
             if (e.key === 'Enter') {
-                return navigate(`/search/${event.value}`)
+                return navigate(`/products/search/${event.value}`)
             }
         })
     }
@@ -45,7 +45,7 @@ export const Header = () => {
             </C.Logo>
             <C.Search>
                 <input type="text" placeholder="Pesquise aqui..." onChange={e => handleProductsPerName(e.target)} />
-                <Link to={`/search/${textSearch}`}>
+                <Link to={`/products/search/${textSearch}`}>
                     <i>{I.Search}</i>
                 </Link>
             </C.Search>
@@ -62,34 +62,34 @@ export const Header = () => {
                         <span>Todos os departamentos</span>
                         <i>{handleNavListState === true ? I.ChevronUp : I.ChevronDown}</i></C.ListTitle>
                     <C.ListAll display={handleNav(handleNavListState)}>
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Mercearia">Mercearia</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Mercearia">Mercearia</Link></li>
 
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Hortifruti">Hortifruti</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Hortifruti">Hortifruti</Link></li>
 
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Açucar">Açucar e Adoçante</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Açucar">Açucar e Adoçante</Link></li>
 
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Massas+Molhos">Massas e Molhos</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Massas+Molhos">Massas e Molhos</Link></li>
 
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Doces+Confeitaria">Doces e Confeitaria</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Doces+Confeitaria">Doces e Confeitaria</Link></li>
                         
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Notebooks">Notebooks</Link></li>
-                        <li onClick={() => setHandleNavListState(false)}><Link to="/categories/Eletrodomesticos">Eletrodomésticos</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Notebooks">Notebooks</Link></li>
+                        <li onClick={() => setHandleNavListState(false)}><Link to="/products/categories/Eletrodomesticos">Eletrodomésticos</Link></li>
                         
                     </C.ListAll>
                 </C.AllItems>
-                <Link to="/categories/Mercearia">
+                <Link to="/products/categories/Mercearia">
                     <C.NavItem>Mercearia</C.NavItem>
                 </Link>
-                <Link to="/categories/Notebooks">
+                <Link to="/products/categories/Notebooks">
                     <C.NavItem>Notebooks</C.NavItem>
                 </Link>
-                <Link to="/categories/Eletrodomesticos">
+                <Link to="/products/categories/Eletrodomesticos">
                     <C.NavItem>Eletrodomésticos</C.NavItem>
                 </Link>
-                <Link to="/categories/Smartphones">
+                <Link to="/products/categories/Smartphones">
                     <C.NavItem>Smartphones</C.NavItem>
                 </Link>
-                <Link to="/categories/Moveis">
+                <Link to="/products/categories/Moveis">
                     <C.NavItem>Móveis</C.NavItem>
                 </Link>
             </C.Nav>

@@ -15,6 +15,10 @@ export const ListItems = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    a {
+        text-decoration: none;
+    }
 `
 
 export const Promotion = styled.div`

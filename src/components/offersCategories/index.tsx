@@ -11,7 +11,7 @@ export const OffersCategories = (props: OffersCategoriesProps) => {
     return (
         <C.Container>
             <C.CategoryContainer>
-                <Link to={`/categories/${props.link}`}>
+                <Link to={`/products/categories/${props.link}`}>
                     <C.Category>
                         <img src={props.image} alt="category" />
                         <p>{props.name}</p>

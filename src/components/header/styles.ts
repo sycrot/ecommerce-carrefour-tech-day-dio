@@ -138,6 +138,7 @@ export const Actions = styled.div`
     justify-self: end;
     align-self: end;
     margin-left: 1.5em;
+    cursor: pointer;
 
     @media screen and (min-width: 980px) {
         justify-self: start;

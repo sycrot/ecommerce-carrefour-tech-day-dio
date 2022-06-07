@@ -5,9 +5,18 @@ export const Container = styled.div`
     max-width: 1180px;
     display: flex;
     justify-content: center;
+    padding: 1em 0;
+`
+
+export const Filter = styled.div`
+    width: 600px;
+`
+
+export const Content = styled.div`
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1em 0;
 `
 
 export const Link = styled.div`

@@ -52,7 +52,7 @@ export const getCaterogy = async (category: string) => {
 
     for(let i in list) {
         let categoryUp = category.replace('+', ' ')
-        if (list[i].productClusters.includes(`/${categoryUp}/`) === true) {
+        if (list[i].categories.includes(`/${categoryUp}/`) === true) {
             listResult.push({
                 id: list[i].id,
                 name: list[i].name,
@@ -78,5 +78,5 @@ export const getProductClusters = async (productCluster: number) => {
         }
     })
 
-    return list
+    return listResult
 }

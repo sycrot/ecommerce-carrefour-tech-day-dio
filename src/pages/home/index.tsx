@@ -5,26 +5,17 @@ import * as C from './styles'
 import * as I from '../../common/icons'
 import { OfferSection } from "../../components/offerSection"
 import { OffersCategories } from "../../components/offersCategories"
+import { Link } from "react-router-dom"
 
 export const Home = () => {
 
-    const [products, setProducts] = useState<Array<any>>([])
     const [productsOffer, setProductsOffer] = useState<Array<any>>([])
-
-    useEffect(() => {
-        const getProducts = async () => {
-            const res = await productService.getAll()
-            
-            setProducts(res)
-        }
-        getProducts()
-    }, [])
 
     useEffect(() => {
         const getProductsOffer = async () => {
             const res = await productService.getProductClusters(5622)
 
-            console.log(res)
+            setProductsOffer(res)
         }
         getProductsOffer()
     }, [])
@@ -35,31 +26,38 @@ export const Home = () => {
         <C.Container>
             <SlideShow />
             <C.ListItems>
-                <C.Promotion bg="https://1.bp.blogspot.com/-aW4bnUzzTeU/YIQWX-VNJ2I/AAAAAAAAFGA/kF_mWjkjgV0bJzGmqwNvxOhWrGruuojWACLcBGAsYHQ/w1600/DB0772F1-A5DD-40A1-8FC7-D02C8DB84D55.jpeg" color="#fff">
-                    <C.PromotionTexts bg='0, 158, 255'>
-                        <p>Super<br/>Ofertas</p>
-                        <small>com até</small>
-                        <span>60% OFF</span>
-                    </C.PromotionTexts>
-                </C.Promotion>
+                <Link to={`/products/clusters/${2879}`}>
+                    <C.Promotion bg="https://1.bp.blogspot.com/-aW4bnUzzTeU/YIQWX-VNJ2I/AAAAAAAAFGA/kF_mWjkjgV0bJzGmqwNvxOhWrGruuojWACLcBGAsYHQ/w1600/DB0772F1-A5DD-40A1-8FC7-D02C8DB84D55.jpeg" color="#fff">
+                        <C.PromotionTexts bg='0, 158, 255'>
+                            <p>Super<br/>Ofertas</p>
+                            <small>com até</small>
+                            <span>60% OFF</span>
+                        </C.PromotionTexts>
+                    </C.Promotion>
+                </Link>
 
-                <C.Promotion bg="https://4.bp.blogspot.com/-SrZKb7xVZSg/U9pF4qSBsvI/AAAAAAAAJHQ/3_dxVvmkhlQ/s1600/Imagem+de+divulgacao+-+Julho+2014.jpg" color="#fff">
-                    <C.PromotionTexts bg='255, 124, 0'>
-                        <span>Ofertas</span>
-                        <small>da</small>
-                        <span>Semana</span>
-                    </C.PromotionTexts>
-                </C.Promotion>
-
-                <C.Promotion bg="https://newtrade.com.br/wp-content/uploads/2018/02/carrefour-carrinho.jpg" color="#fff">
-                    <C.PromotionTexts bg='255, 0, 0'>
-                        <p style={{marginBottom: '0.4em'}}>HOT BAR</p>
-                        <span>MERCEARIA</span>
-                    </C.PromotionTexts>
-                </C.Promotion>
+                <Link to={`/products/clusters/${7959}`}>
+                    <C.Promotion bg="https://4.bp.blogspot.com/-SrZKb7xVZSg/U9pF4qSBsvI/AAAAAAAAJHQ/3_dxVvmkhlQ/s1600/Imagem+de+divulgacao+-+Julho+2014.jpg" color="#fff">
+                        <C.PromotionTexts bg='255, 124, 0'>
+                            <span>Ofertas</span>
+                            <small>da</small>
+                            <span>Semana</span>
+                        </C.PromotionTexts>
+                    </C.Promotion>
+                </Link>
+                
+                <Link to={`/products/clusters/${5622}`}>
+                    <C.Promotion bg="https://newtrade.com.br/wp-content/uploads/2018/02/carrefour-carrinho.jpg" color="#fff">
+                        <C.PromotionTexts bg='255, 0, 0'>
+                            <p style={{marginBottom: '0.4em'}}>HOT BAR</p>
+                            <span>MERCEARIA</span>
+                        </C.PromotionTexts>
+                    </C.Promotion>
+                </Link>
+                
             </C.ListItems>
 
-            <OfferSection title="Ofertas da semana" products={products}/>
+            <OfferSection title="Ofertas da semana" products={productsOffer}/>
 
             <C.TitleContent>Os melhores produtos!</C.TitleContent>
             <C.ListItems>

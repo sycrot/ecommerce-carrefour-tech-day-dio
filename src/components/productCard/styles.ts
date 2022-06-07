@@ -39,7 +39,7 @@ export const ProductImage = styled.div`
 export const ProductTitle = styled.div`
     font-weight: bold;
     width: 100%;
-    height: 42px;
+    height: 44px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
