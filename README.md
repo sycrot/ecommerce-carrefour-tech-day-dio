@@ -1,5 +1,5 @@
 # Carrefour Tech Day - ecommerce
-*** Pode ser que exista um problema com o CORS. Para isso utilizo o [Allow CORS: Access-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pt-br), que pode ser encontrado np Chrome Web Store ***
+***Pode ser que exista um problema com o CORS. Para isso utilizo o [Allow CORS: Access-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pt-br), que pode ser encontrado np Chrome Web Store***
 
 ## Site ecommerce baseado site de compras Carrefour
 
