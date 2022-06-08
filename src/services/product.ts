@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+import { Product } from '../types/Product'
 import axios from './axios-configure'
 
 export const getAll = async () => {
-    let list:any[] = []
+    let list:Product[] = []
 
     await axios.get('api/catalog_system/pub/products/search?fq={seller_name}').then(res => {
         let data = res.data
@@ -23,7 +25,7 @@ export const getAll = async () => {
 }
 
 export const getById = async (id: string) => {
-    let product:any[] = []
+    let product:Product[] = []
 
     await axios.get('api/catalog_system/pub/products/search?fq={seller_name}').then(res => { 
         let data = res.data
@@ -36,7 +38,7 @@ export const getById = async (id: string) => {
 }
 
 export const search = async (text: string) => {
-    let list:any[] = await getAll()
+    let list:Product[] = await getAll()
 
     let listResult = list.filter(function(value) {
         return value.name.toLowerCase().indexOf(text.toLowerCase()) > -1
@@ -48,7 +50,7 @@ export const search = async (text: string) => {
 export const getCaterogy = async (category: string) => {
     let list:any[] = await getAll()
 
-    let listResult:any[] = []
+    let listResult:Product[] = []
 
     for(let i in list) {
         let categoryUp = category.replace('+', ' ')
@@ -59,7 +61,8 @@ export const getCaterogy = async (category: string) => {
                 description: list[i].description,
                 image: list[i].image,
                 categories: list[i].categories,
-                sellers: list[i].sellers
+                sellers: list[i].sellers,
+                productClusters: list[i].productClusters
             })
         }
     }
@@ -68,7 +71,7 @@ export const getCaterogy = async (category: string) => {
 }
 
 export const getProductClusters = async (productCluster: number) => {
-    let list:any[] = await getAll()
+    let list:Product[] = await getAll()
 
     let listResult:any[] = []
 
