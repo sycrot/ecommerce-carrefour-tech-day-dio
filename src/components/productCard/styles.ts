@@ -12,7 +12,7 @@ export const CardProduct = styled.div`
     scroll-snap-align: start;
 
     @media screen and (min-width: 980px) {
-        width: 279px;
+        width: 259px;
         height: 360px;
         transition: all .2s ease-in-out;
 
@@ -43,6 +43,7 @@ export const ProductTitle = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: 400;
 
     @media screen and (min-width: 980px) {
         white-space: normal;
@@ -53,6 +54,7 @@ export const ProductPrice = styled.div`
     font-size: 1.8em;
     font-weight: bold;
     line-height: 0.8em;
+    color: #02458C;
 
     span {
         font-weight: lighter;

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import * as C from './styles'
 import Logo from '../../logo.svg'
@@ -7,8 +7,17 @@ import * as I from '../../common/icons'
 export const Header = () => {
     const [handleNavState, setHandleNavState] = useState(false)
     const [handleNavListState, setHandleNavListState] = useState(false)
+    
     let navigate = useNavigate()
     const [textSearch, setTextSearch] = useState('')
+
+    const getNumProducts = () => {
+        if (localStorage.hasOwnProperty('cart_list_carrefour')) {
+            let list = JSON.parse(localStorage.getItem('cart_list_carrefour'))
+
+            return list.length
+        }
+    }
 
     const setHandleNav = (handle: boolean, state) => {
         if (handle === false) {
@@ -52,9 +61,13 @@ export const Header = () => {
             <C.ButtonNav onClick={() => setHandleNav(handleNavState,setHandleNavState)}>
                 {I.Menu}
             </C.ButtonNav>
+            
             <C.Actions>
-                <C.ActionItem>{I.Bag}<i>1</i></C.ActionItem>
+                <Link to="/cart">
+                <C.ActionItem>{I.Cart}<i>{getNumProducts()}</i></C.ActionItem>
+                </Link>
             </C.Actions>
+            
             
             <C.Nav display={handleNav(handleNavState)}>
                 <C.AllItems>

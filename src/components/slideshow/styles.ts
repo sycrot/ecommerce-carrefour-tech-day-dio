@@ -84,7 +84,7 @@ export const SlidesAct = styled.div`
     position: absolute;
     bottom: 0;
     display: none;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.3);
     padding: 0.5em 0;
     border-radius: 9px 9px 0 0;
 

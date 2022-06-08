@@ -4,12 +4,24 @@ export const Container = styled.div`
     width: 100%;
     max-width: 1380px;
     display: flex;
-    padding: 1em 0;
+    flex-direction: column;
+
+    @media screen and (min-width: 980px){
+        flex-direction: row;
+        padding: 1em 0;
+    }
 `
 
 export const Content = styled.div`
-    width: 1200px;
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 980px){
+        width: 1150px;
+        margin-right: 1em;
+    }
 `
 export const ContentHeader = styled.div`
     width: 100%;
@@ -19,7 +31,7 @@ export const ContentHeader = styled.div`
     border-bottom: 2px solid #cecece;
 
     span {
-        display: flex;
+        display: none;
         font-weight: lighter;
 
         p {
@@ -27,18 +39,56 @@ export const ContentHeader = styled.div`
             margin-right: 0.3em;
         }
     }
+
+    @media screen and (min-width: 980px){
+        margin-left: 1em;
+
+        span {
+            display: flex;
+            font-weight: lighter;
+
+            p {
+                font-weight: bold;
+                margin-right: 0.3em;
+            }
+        }
+    }
 `
 export const ContentProducts = styled.div`
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-wrap: wrap;
+
+    @media screen and (min-width: 980px){ 
+        margin-left: 1em;
+        justify-content: start;
+    }
+`
+
+export const ButtonNextPage = styled.button`
+    margin: 2em 0;
+    width: 300px;
+    height: 60px;
+    font-size: 1em;
+    background: none;
+    border: 2px solid #02458c;
+    border-radius: 5px;
+    color: #02458c;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+        background: #02458c;
+    }
 `
 
 export const Order = styled.div`
     display: flex;
 
     span {
+        display: flex;
         font-size: 1em;
         font-weight: 400;
         margin-right: 0.5em;
@@ -105,78 +155,48 @@ export const Text = styled.div`
 `
 
 export const Filter = styled.div`
-    width: 230px;
+    width: 300px;
     padding: 1em;
+    display: none;
+    @media screen and (min-width: 980px){ 
+        display: block;
+    }
+`
+
+export const TitleFilter = styled.div`
+        font-size: 1em;
+        color: #004362;
+
+        @media screen and (min-width: 980px){ 
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+        }
+`
+
+export const RangePrice = styled.div`
+    width: 100%;
 `
 
 export const List = styled.div`
     width: 100%;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    justify-content: space-between;
+    align-items: center;
 
-    span {
-        font-size: 1.2em;
-        margin-bottom: 0.5em;
-        color: #004362;
-    }
+    @media screen and (min-width: 980px){ 
+        flex-direction: column;
+        margin-bottom: 2em;
 
-    ul {
-        list-style-type: none;
-    }
-
-    li {
-        width: 100%;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-
-        input {
-            position: absolute;
-            z-index: -1;
-            opacity: 0;
-        }
-
-        input + label {
-            position: relative;
-            cursor: pointer;
-            padding-left: 25px;
-            margin-bottom: 0.8em;
-            transition: all .2s ease-in-out;
-        }
-
-        input + label::before {
-            content: "";
-            position: absolute;
-            width: 14px;
-            height: 16px;
-            left: 0;
-            bottom: 0;
-            border: solid 2px #cecece;
-            border-radius: 4px;
-            vertical-align: bottom;
-        }
-
-        input + label:hover {
-            color: #02458c;
-            filter: drop-shadow(2px 2px 2px rgba(95, 228, 255, 0.5));
-        }
-
-        input:checked + label::after {
-            content: "";
-            position: absolute;
-            left: 5px;
-            bottom: 6px;
-            width: 3px;
-            height: 6px;
-            border-right: solid 4px #02458c;
-            border-bottom: solid 4px #02458c;
-            transform: rotate(45deg);
+        span {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+            color: #004362;
         }
     }
 `
 
-export const InputRange = styled.input`
+export const InputRange = styled.div`
     width: 100%;
 `
 

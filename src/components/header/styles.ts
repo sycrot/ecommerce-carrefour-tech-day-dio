@@ -172,6 +172,10 @@ export const ActionItem = styled.div`
 
     @media screen and (min-width: 980px) {
         width: 40px;
+
+        i {
+            left: 1.5em;
+        }
     }
 `
 

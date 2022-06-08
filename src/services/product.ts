@@ -25,16 +25,11 @@ export const getAll = async () => {
 }
 
 export const getById = async (id: string) => {
-    let product:Product[] = []
+    let product:Product[] = await getAll()
 
-    await axios.get('api/catalog_system/pub/products/search?fq={seller_name}').then(res => { 
-        let data = res.data
+    const found = product.find(el => el.id === id)
 
-        const found = data.find(el => el.productId === id)
-        product.push(found)
-    }).catch(err => console.log("Error", err))
-
-    return product
+    return found
 }
 
 export const search = async (text: string) => {
@@ -49,6 +44,7 @@ export const search = async (text: string) => {
 
 export const getCaterogy = async (category: string) => {
     let list:any[] = await getAll()
+    
 
     let listResult:Product[] = []
 

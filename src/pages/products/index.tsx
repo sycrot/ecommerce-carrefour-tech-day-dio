@@ -5,12 +5,16 @@ import * as productService from '../../services/product'
 import * as C from './styles'
 import * as I from '../../common/icons'
 import { Product } from "../../types/Product"
+import { Slider } from "@mui/material"
 
 
 export const Products = () => {
     const {value, type} = useParams()
     const [products, setProducts] = useState<Product[]>([])
     const [order, setOrder] = useState('')
+
+    const [valuePrice, setValuePrice] = useState([0,2000])
+    const [productsCount, setProductsCount] = useState(4)
 
     useEffect(() => {
         const getProducts = async () => {
@@ -64,35 +68,36 @@ export const Products = () => {
         setOrder(orderValue)
     }
 
+    const rangeSelector = (event, newValue) => {
+        setValuePrice(newValue)
+    }
+
+    const handleMoreProducts = () => {
+        setProductsCount(productsCount+4)
+    }
+
+    const handleButtonMore = () => {
+        if (productsCount <= products.length) {
+            return (
+                <C.ButtonNextPage onClick={() => handleMoreProducts()}>Mais produtos</C.ButtonNextPage>
+            )
+        }
+    }
+
     return (
         <C.Container>
             <C.Filter>
                 <C.List>
-                    <span>Faixa de Preço</span>
-                    <C.InputRange type="range" max="20000" min="0"/>
-                    <C.MinMax><small>R$ 0</small><small>R$ 20.000,00</small></C.MinMax>
-                </C.List>
-
-                <C.List>
-                    <span>Marca</span>
-                    <ul>
-                        <li>
-                            <input type="checkbox" id="marca"/>
-                            <label htmlFor="marca">Marca</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="marca2"/>
-                            <label htmlFor="marca2">Marca</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="marca3"/>
-                            <label htmlFor="marca3">Marca</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="marca4"/>
-                            <label htmlFor="marca4">Marca</label>
-                        </li>
-                    </ul>
+                    <C.TitleFilter>
+                        Faixa de Preço
+                    </C.TitleFilter>
+                    
+                    <C.RangePrice>
+                        <C.InputRange>
+                            <Slider value={valuePrice} onChange={rangeSelector} getAriaLabel={() => "Temperature range"}/>
+                        </C.InputRange>
+                        <C.MinMax><small>R$ {valuePrice[0]}</small><small>R$ {valuePrice[1]}</small></C.MinMax>
+                    </C.RangePrice>
                 </C.List>
             </C.Filter>
             <C.Content>
@@ -111,14 +116,22 @@ export const Products = () => {
                 </C.ContentHeader>
                 <C.ContentProducts>
                     {
-                        products.length == 0 ?
+                        products.length === 0 ?
                         handleError() 
                         :
-                        products.map(product => (
-                            <ProductCard key={product.id} id={product.id} name={product.name} image={product.image} sellers={product.sellers}/>
-                        ))
+                        products.slice(0,productsCount).map(product => {
+                            if (product.sellers > valuePrice[0] && product.sellers < valuePrice[1]) {
+                                return (
+                                    <ProductCard key={product.id} id={product.id} name={product.name} image={product.image} sellers={product.sellers}/>
+                                )
+                            }
+                        })
                     }
                 </C.ContentProducts>
+
+                {
+                    handleButtonMore()
+                }
             </C.Content>
         </C.Container>
     )

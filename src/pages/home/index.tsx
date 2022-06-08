@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { SlideShow } from "../../components/slideshow"
 import * as productService from '../../services/product'
 import * as C from './styles'
-import * as I from '../../common/icons'
 import { OfferSection } from "../../components/offerSection"
 import { OffersCategories } from "../../components/offersCategories"
 import { Link } from "react-router-dom"
@@ -13,7 +12,8 @@ export const Home = () => {
 
     useEffect(() => {
         const getProductsOffer = async () => {
-            const res = await productService.getProductClusters(5622)
+            /* const res = await productService.getProductClusters(5622) */
+            const res = await productService.getAll()
 
             setProductsOffer(res)
         }

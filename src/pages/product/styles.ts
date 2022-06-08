@@ -71,6 +71,10 @@ export const Price = styled.div`
     }
 `
 
+export const InfoCart = styled.span`
+    color: #007C11;
+`
+
 export const Button = styled.button`
     width: 100%;
     height: 50px;
