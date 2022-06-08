@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Carrefour Tech Day - ecommerce
+*** Pode ser que exista um problema com o CORS. Para isso utilizo o [Allow CORS: Access-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pt-br), que pode ser encontrado np Chrome Web Store ***
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Site ecommerce baseado site de compras Carrefour
 
-## Available Scripts
+## Resumo
+Projeto desenvolvido para o Carrefour Tech Day.
+Utilizando de uma das APIs do Carrefour para o desenvolvimento de um site ecommerce.
 
-In the project directory, you can run:
+## Informações
+A página inicial conta com um slide de imagens, alguns cards de promoções, e outros componentes.
 
-### `npm start`
+O menu é totalmente interativo, com uma barra de pesquisa funcional e com os elementos de menu que levam para suas respectivas páginas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A página de produtos pode ser filtrada por ordem de relevância, maior preço e menor preço, e também pode ser determinado um intervalo de valor passado pelo elemento de faixa de preço a esquerda.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O menu é totalmente interativo, com uma barra de pesquisa funcional e com os elementos de menu que levam para suas respectivas páginas. O campo de pesquisa trás elementos cujo nome é igual ou contem elementos do campo.
 
-### `npm test`
+O click no produto o leva para uma página que mostra as informações do produto, podendo adicioná-lo no carrinho. Os produtos adicionados no carrinho são armazenados no localStorage.
+Os produtos do carrinho podem ser visto na página de carrinho que mostra todos os produtos adicionados, onde a quantidade de tal produto pode ser alterada, e também onde pode-se decidir a permanência do produto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Ferrmentas utilizadas
+Neste projeto foram utilizados algumas ferramentas, como Styled Components para estilização dos elementos, Axios para buscar dados da API Carrefour, e Material UI para alguns elementos.
