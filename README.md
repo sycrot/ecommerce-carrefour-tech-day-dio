@@ -1,7 +1,7 @@
 # Carrefour Tech Day - ecommerce
 ***⚠️ Pode ser que exista um problema com o CORS. Para isso utilizo o [Allow CORS: Access-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pt-br), que pode ser encontrado no Chrome Web Store ⚠️***
 
-## Site ecommerce baseado site de compras Carrefour
+## Site ecommerce baseado no site de compras Carrefour
 
 ## Resumo
 Projeto desenvolvido para o Carrefour Tech Day.
@@ -20,4 +20,4 @@ O click no produto o leva para uma página que mostra as informações do produt
 Os produtos do carrinho podem ser visto na página de carrinho que mostra todos os produtos adicionados, onde a quantidade de tal produto pode ser alterada, e também onde pode-se decidir a permanência do produto.
 
 ## Ferrmentas utilizadas
-Neste projeto foram utilizados algumas ferramentas, como Styled Components para estilização dos elementos, Axios para buscar dados da API Carrefour, e Material UI para alguns elementos.
+Feito com React. Neste projeto foram utilizados algumas ferramentas, como Styled Components para estilização dos elementos, Axios para buscar dados da API Carrefour, e Material UI para alguns elementos.

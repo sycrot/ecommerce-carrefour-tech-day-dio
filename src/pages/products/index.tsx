@@ -12,8 +12,7 @@ export const Products = () => {
     const {value, type} = useParams()
     const [products, setProducts] = useState<Product[]>([])
     const [order, setOrder] = useState('')
-
-    const [valuePrice, setValuePrice] = useState([0,2000])
+    const [valuePrice, setValuePrice] = useState([0,100])
     const [productsCount, setProductsCount] = useState(4)
 
     useEffect(() => {
@@ -49,8 +48,6 @@ export const Products = () => {
         }
         getProducts()
     }, [value, type, order, products])
-
-    
 
     const handleError = () => {
         return (

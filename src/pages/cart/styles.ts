@@ -6,12 +6,59 @@ export const Container = styled.div`
     padding: 1em;
 `
 
+export const PageNull = styled.div`
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    div {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    i {
+        display: block;
+        width: 130px;
+        color: #006CAE;
+    }
+
+    span {
+        font-size: 1.2em;
+        margin-bottom: 2em;
+    }
+
+    small {
+        font-size: 1em;
+
+        a {
+            text-decoration: none;
+            color: #02458C;
+            border-radius: 5px;
+            padding: 1em;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                border: 1px solid #02458C;
+                filter: drop-shadow(2px 2px 2px rgba(100, 172, 216, 0.4));
+            }
+        }
+    }
+`
+
 export const Product = styled.div`
     display: flex;
     border-bottom: 2px solid #cecece;
     padding: 1em 0;
     justify-content: space-between;
     flex-wrap: wrap;
+    
+    a {
+        text-decoration: none;
+    }
 `
 
 export const ProductContent = styled.div`

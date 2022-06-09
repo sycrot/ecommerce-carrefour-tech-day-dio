@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { handlePrice } from '../../common/services/handlePrice'
 import * as C from './styles'
 
 interface ProductCardProps {
@@ -9,13 +10,6 @@ interface ProductCardProps {
 }
 
 export const ProductCard = (props: ProductCardProps) => {
-
-    const handlePrice = (price: number) => {
-        let newPrice = price.toFixed(2).toString()
-        let result = newPrice.replace('.', ',')
-
-        return `${result}`
-    }
 
     return (
         <Link to={`/product/${props.id}`} style={{textDecoration: 'none', color: '#000'}}>

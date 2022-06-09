@@ -12,8 +12,8 @@ export const Home = () => {
 
     useEffect(() => {
         const getProductsOffer = async () => {
-            /* const res = await productService.getProductClusters(5622) */
-            const res = await productService.getAll()
+            const res = await productService.getProductClusters(5622)
+            /* const res = await productService.getAll() */
 
             setProductsOffer(res)
         }

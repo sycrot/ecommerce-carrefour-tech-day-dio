@@ -56,9 +56,10 @@ export const Name = styled.div`
 `
 
 export const Price = styled.div`
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 500;
     line-height: 0.7em;
+    color: #02458c;
 
     span {
         font-size: 0.6em;
@@ -143,6 +144,7 @@ export const Description = styled.div`
 
     h3 {
         margin-bottom: 1em;
+        color: #02458c;
     }
 
     p {

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Product } from '../../types/Product'
 import * as C from './styles'
 import * as I from '../../common/icons'
+import { handlePrice } from '../../common/services/handlePrice'
+import { Link } from 'react-router-dom'
 
 export const Cart = () => {
     const storage = localStorage
@@ -41,13 +43,6 @@ export const Cart = () => {
         getTotalValue()
     }, [storage])
 
-    const handlePrice = (price: number) => {
-        let newPrice = price.toFixed(2).toString()
-        let result = newPrice.replace('.', ',')
-
-        return `${result}`
-    }
-
     const handleQuantity = (e: string, id: number) => {
         let list = JSON.parse(storage.getItem('cart_list_carrefour'))
 
@@ -72,18 +67,35 @@ export const Cart = () => {
         window.location.reload()
     }
 
+    const renderPageNull = () => {
+        return (
+            <C.PageNull>
+                <div>
+                    <i>{I.ExclamationCircle}</i>
+                    <span>Nenhum produto adicionado ao carrinho. Vá as compras!</span>
+                    <small><Link to="/">Voltar para página inicial!</Link></small>
+                </div>
+            </C.PageNull>
+        )
+    }
+
     return (
         <C.Container>
             {
+                products.length === 0 ?
+                    renderPageNull()
+                :
                 products.map((product, index) => (
                     <C.Product key={product.id}>
-                        <C.ProductContent>
-                            <C.Image><img src={product.image} alt={product.name}/></C.Image>
-                            <C.Info>
-                                <C.Title>{product.name}</C.Title>
-                                <C.Price><span>R$</span> {handlePrice(product.sellers)}</C.Price>
-                            </C.Info>
-                        </C.ProductContent>
+                        <Link to={`/product/${product.id}`}>
+                            <C.ProductContent>
+                                <C.Image><img src={product.image} alt={product.name}/></C.Image>
+                                <C.Info>
+                                    <C.Title>{product.name}</C.Title>
+                                    <C.Price><span>R$</span> {handlePrice(product.sellers)}</C.Price>
+                                </C.Info>
+                            </C.ProductContent>
+                        </Link>
                         <C.Quantity>
                             <span>Quantidade:</span>
                             <C.Action onClick={() => handleQuantity('up', index)}>{I.ChevronUp}</C.Action>
@@ -98,10 +110,17 @@ export const Cart = () => {
                 ))
             }
 
-            <C.Actions>
-                <C.TotalValue><span>Valor total: R$ </span>{handlePrice(totalValue)}</C.TotalValue>
-                <C.Pay>Finalizar compra</C.Pay>
-            </C.Actions>
+            
+                <C.Actions>
+                    <C.TotalValue><span>Valor total: R$ </span>{handlePrice(totalValue)}</C.TotalValue>
+                    {
+                        products.length !== 0
+                        ? <C.Pay>Finalizar compra</C.Pay>
+                        : ''
+                    }
+                </C.Actions>
+                
+            
         </C.Container>
     )
 }

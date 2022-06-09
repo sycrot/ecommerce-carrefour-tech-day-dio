@@ -1,10 +1,21 @@
 import * as C from './styles'
 import * as I from '../../common/icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const SlideShow = () => {
     const [numSlide, setNumSlide] = useState(0)
     const [slideAnimate, setSlideAnimate] = useState('')
+
+    useEffect(() => {
+        const handleSlidePaginator = () => {
+            document.querySelectorAll('.slider-paginator-active').forEach(e => {
+                e.classList.remove('slider-paginator-active')
+            })
+    
+            document.querySelector(`#slider-paginator-${numSlide}`).classList.add('slider-paginator-active')
+        }
+        handleSlidePaginator()
+    }, [numSlide])
 
     const images = [
         {
