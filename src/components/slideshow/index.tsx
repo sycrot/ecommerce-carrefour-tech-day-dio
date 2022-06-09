@@ -29,8 +29,15 @@ export const SlideShow = () => {
         return images[numSlide]
     }
 
-    const handleNextSlideAct = (num: number) => {
+    const handleNextSlideAct = (num: number, element: Element) => {
         setNumSlide(num)
+
+        document.querySelectorAll('.slider-paginator-active').forEach(e => {
+            e.classList.remove('slider-paginator-active')
+        })
+
+        element.classList.add('slider-paginator-active')
+
         animateSlide()
     }
 
@@ -73,7 +80,7 @@ export const SlideShow = () => {
                 <C.SlidesAct>
                     {
                         images.map((image, index) => (
-                            <C.Slider key={index} onClick={() => handleNextSlideAct(index)}></C.Slider>
+                            <C.Slider id={`slider-paginator-${index}`} key={index} onClick={e => handleNextSlideAct(index, e.target)}></C.Slider>
                         ))
                     }
                 </C.SlidesAct>
