@@ -14,6 +14,7 @@ export const Products = () => {
     const [order, setOrder] = useState('')
     const [valuePrice, setValuePrice] = useState([0,100])
     const [productsCount, setProductsCount] = useState(4)
+    const [orderedProducts, setOrderedProducts] = useState<Product[]>([])
 
     useEffect(() => {
         const getProducts = async () => {
@@ -30,23 +31,28 @@ export const Products = () => {
                 res = await productService.getCaterogy(value)
             }
 
-            const getOrder = (order: string, productsList:Product[]) => {
-                if (order === 'relevance') {
-                    return productsList 
-                }
-                if (order === 'lowestprice') {
-                    productsList = products.sort((a, b) => a.sellers - b.sellers)
-                }
-                if (order === 'biggestprice') {
-                    productsList = products.sort((a, b) => b.sellers - a.sellers)
-                }
-        
-                return productsList
-            }
-            setProducts(getOrder(order, res))
+            setProducts(res)
         }
         getProducts()
-    }, [value, type, order, products])
+    }, [value, type, order])
+
+    useEffect(() => {
+        const getOrder = (order: string) => {
+            let newProducts = products
+            if (order === 'relevance') {
+                setOrderedProducts(products)
+            }
+            if (order === 'lowestprice') {
+                newProducts = products.sort((a, b) => a.sellers - b.sellers)
+            }
+            if (order === 'biggestprice') {
+                newProducts = products.sort((a, b) => b.sellers - a.sellers)
+            }
+    
+            setOrderedProducts(newProducts)
+        }
+        getOrder(order)
+    }, [products, order])
 
     const handleError = () => {
         return (
@@ -115,7 +121,7 @@ export const Products = () => {
                         products.length === 0 ?
                         handleError() 
                         :
-                        products.slice(0,productsCount).map(product => {
+                        orderedProducts.slice(0,productsCount).map(product => {
                             if (product.sellers > valuePrice[0] && product.sellers < valuePrice[1]) {
                                 return (
                                     <ProductCard key={product.id} id={product.id} name={product.name} image={product.image} sellers={product.sellers}/>
