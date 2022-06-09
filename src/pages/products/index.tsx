@@ -73,7 +73,7 @@ export const Products = () => {
     }
 
     const handleButtonMore = () => {
-        if (productsCount <= products.length) {
+        if (productsCount < products.length) {
             return (
                 <C.ButtonNextPage onClick={() => handleMoreProducts()}>Mais produtos</C.ButtonNextPage>
             )
