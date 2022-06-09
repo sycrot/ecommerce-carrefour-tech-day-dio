@@ -33,6 +33,10 @@ export const ActionAddFavorite = styled.div`
     top: 1em;
     color: #D00C0C;
     cursor: pointer;
+
+    &:active {
+        transform: scale(1.1);
+    }
 `
 
 export const ProductImage = styled.div`
