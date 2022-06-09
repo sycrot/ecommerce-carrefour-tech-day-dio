@@ -23,12 +23,17 @@ export const Info = styled.div`
 `
 
 export const Image = styled.div`
-    width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     img {
+        width: 50px;
+    }
+
+    @media screen and (min-width: 980px) {
+        img {
         width: 120px;
+    }
     }
 `
 
@@ -132,7 +137,7 @@ export const Delete = styled.button`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 0.5em;
     background: #F33F00;
     border: none;
     border-radius: 6px;
@@ -153,5 +158,9 @@ export const Delete = styled.button`
     &:hover {
         outline: 2px solid #AE2D00;
         filter: drop-shadow(3px 3px 3px  rgba(246, 128, 86, 0.4));
+    }
+
+    @media screen and (min-width: 980px) {
+        margin-top: 2em;
     }
 `
