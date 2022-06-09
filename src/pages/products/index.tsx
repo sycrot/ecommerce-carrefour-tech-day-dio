@@ -49,6 +49,14 @@ export const Products = () => {
         getProducts()
     }, [value, type, order, products])
 
+    const getMaxPrice = () => {
+        const maxPrice = products.reduce((prev, current) => {
+            return prev.sellers > current.sellers ? prev : current
+        })
+
+        return maxPrice.sellers
+    }
+
     const handleError = () => {
         return (
             <C.Error>

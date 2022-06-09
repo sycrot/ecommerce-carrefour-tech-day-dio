@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+
+export const Container = styled.div`
+    position: relative;
+`
 export const CardProduct = styled.div`
     width: 170px;
     height: 280px;
@@ -20,6 +24,15 @@ export const CardProduct = styled.div`
             box-shadow: 3px 3px 10px #ededed;
         }
     }
+`
+
+export const ActionAddFavorite = styled.div`
+    position: absolute;
+    width: 34px;
+    right: 1em;
+    top: 1em;
+    color: #D00C0C;
+    cursor: pointer;
 `
 
 export const ProductImage = styled.div`
